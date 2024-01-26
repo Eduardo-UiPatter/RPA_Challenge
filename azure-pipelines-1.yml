@@ -1,0 +1,20 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: UiPathRunJob@4
+  inputs:
+    orchestratorConnection: 'UiPath-Dev'
+    processName: 'RPAPipeline'
+    folderName: 'https://staging.uipath.com/staging_for_uipath/UiPath_Dev/orchestrator_'
