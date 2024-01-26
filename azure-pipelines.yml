@@ -1,0 +1,5 @@
+- task: UiPathRunJob@4
+  inputs:
+    orchestratorConnection: 'UiPath-Dev'
+    processName: 'RPA-Challenge'
+    folderName: 'AH'
