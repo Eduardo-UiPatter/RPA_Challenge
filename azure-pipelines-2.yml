@@ -23,3 +23,9 @@ steps:
     orchestratorConnection: 'AH connection'
     folderName: 'UCare'
     traceLevel: 'Information'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'Pack_Test_Pipeline'
+    publishLocation: 'Container'
+
