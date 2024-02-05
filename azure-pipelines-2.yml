@@ -10,8 +10,16 @@ pool:
   vmImage: windows-latest
 
 steps:
-- task: UiPathRunJob@4
+- task: UiPathPack@4
   inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: '$(Build.ArtifactStagingDirectory)'
     orchestratorConnection: 'AH connection'
-    processName: 'Rpa Challenge'
-    folderName: 'AH'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    traceLevel: 'Information'
+- task: UiPathTest@4
+  inputs:
+    testTarget: 'TestSet'
+    orchestratorConnection: 'AH connection'
+    folderName: 'UCare'
+    traceLevel: 'Information'
