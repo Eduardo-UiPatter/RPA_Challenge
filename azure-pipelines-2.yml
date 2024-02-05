@@ -13,7 +13,7 @@ steps:
 - task: UiPathPack@4
   inputs:
     versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.ArtifactStagingDirectory)'
+    projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'AH connection'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Information'
