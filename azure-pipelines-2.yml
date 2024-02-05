@@ -19,7 +19,7 @@ steps:
     traceLevel: 'Information'
 - task: UiPathTest@4
   inputs:
-    testTarget: 'RPA-Challenge'
+    testTarget: 'TestSet'
     orchestratorConnection: 'UiPath-Dev'
     folderName: 'UCare'
     traceLevel: 'Information'
