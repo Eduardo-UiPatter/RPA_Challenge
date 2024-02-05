@@ -19,8 +19,8 @@ steps:
     traceLevel: 'Information'
 - task: UiPathTest@4
   inputs:
-    testTarget: 'RPA.Challenge'
-    orchestratorConnection: 'AH connection'
+    testTarget: 'RPA-Challenge'
+    orchestratorConnection: 'UiPath-Dev'
     folderName: 'UCare'
     traceLevel: 'Information'
 - task: PublishBuildArtifacts@1
