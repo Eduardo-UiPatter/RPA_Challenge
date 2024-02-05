@@ -20,7 +20,7 @@ steps:
 - task: UiPathTest@4
   inputs:
     testTarget: 'TestSet'
-    orchestratorConnection: 'UiPath-Dev'
+    orchestratorConnection: 'AH connection'
     folderName: 'UCare'
     traceLevel: 'Information'
 - task: PublishBuildArtifacts@1
