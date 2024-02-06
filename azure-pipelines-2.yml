@@ -32,7 +32,7 @@ stages:
     jobs:
       - job: TestDEV
         steps:
-          - task: UiPathTest@2
+          - task: UiPathTest@4
             inputs:
               testTarget: 'TestSet'
               orchestratorConnection: 'UiPATH RPABOTSWORLD'
