@@ -19,7 +19,7 @@ steps:
     traceLevel: 'Information'
 - task: UiPathTest@4
   inputs:
-    testTarget: 'TestSet'
+    testTarget: 'TestProject'
     orchestratorConnection: 'AH connection'
     folderName: 'UCare'
     traceLevel: 'Information'
