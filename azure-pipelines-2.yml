@@ -15,13 +15,15 @@ stages:
     jobs:
     - job: BuildPackage
       steps:
-      - task: UiPathPack@4
+      - task: UiPathPack@2
         inputs:
-        versionType: 'AutoVersion'
-        projectJsonPath: '$(Build.SourcesDirectory)\project.json'
-        orchestratorConnection: 'Azure DevOps'
-        outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-        traceLevel: 'Information'
+          versionType: 'AutoVersion'
+          projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+          outputType: 'Process'
+          orchestratorConnection: 'Azure DevOps'
+          outputPath: '$(Build.ArtifactStagingDirectory)'
+      - publish: $(Build.ArtifactStagingDirectory)
+        artifact: drop
 
   - stage: TestDEV
     displayName:  Test After Publish
