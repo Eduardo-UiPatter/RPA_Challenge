@@ -14,7 +14,6 @@ stages:
     displayName: Build Package
     jobs:
     - job: BuildPackage
-      vmImage: windows-latest
       steps:
       - task: UiPathPack@4
       inputs:
@@ -30,7 +29,6 @@ stages:
     condition: succeeded()
     jobs:
       - job: TestDEV
-        vmImage: windows-latest
         steps:
           - task: UiPathTest@2
             inputs:
