@@ -17,6 +17,7 @@ steps:
     orchestratorConnection: 'Azure DevOps'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Information'
+steps:
 - task: UiPathTest@4
   inputs:
     testTarget: 'TestProject'
