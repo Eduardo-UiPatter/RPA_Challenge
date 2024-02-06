@@ -24,13 +24,22 @@ stages:
       outputPath: '$(Build.ArtifactStagingDirectory)\Output'
       traceLevel: 'Information'
 
-- task: UiPathTest@4
-  inputs:
-    testTarget: 'TestProject'
-    orchestratorConnection: 'Azure DevOps'
-    folderName: 'UCare'
-    traceLevel: 'Information'
-    attachRobotLogs: true
+  - stage: TestDEV
+    displayName:  Test After Publish
+    dependsOn: DeployDEV
+    condition: succeeded()
+    jobs:
+      - job: TestDEV
+        vmImage: windows-latest
+        steps:
+          - task: UiPathTest@2
+            inputs:
+              testTarget: 'TestSet'
+              orchestratorConnection: 'UiPATH RPABOTSWORLD'
+              testSet: 'UiPathAzureDevOps_Tests'
+              folderName: 'UCare'
+              testReportDestination: '$(Pipeline.Workspace)\drop\'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
