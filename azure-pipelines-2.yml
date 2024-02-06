@@ -18,10 +18,10 @@ stages:
       - task: UiPathPack@4
         inputs:
           versionType: 'AutoVersion'
-          projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+          projectJsonPath: '$(Build.SourcesDirectory)'
           outputType: 'Process'
           orchestratorConnection: 'Azure DevOps'
-          outputPath: '$(Build.ArtifactStagingDirectory)'
+          outputPath: '$(Build.ArtifactStagingDirectory)\output'
       - publish: $(Build.ArtifactStagingDirectory)
         artifact: drop
 
