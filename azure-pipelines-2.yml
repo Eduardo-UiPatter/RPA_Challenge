@@ -39,9 +39,3 @@ stages:
               testSet: 'UiPathAzureDevOps_Tests'
               folderName: 'UCare'
               testReportDestination: '$(Pipeline.Workspace)\drop\'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Test'
-    publishLocation: 'Container'
