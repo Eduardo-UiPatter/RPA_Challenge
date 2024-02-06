@@ -23,9 +23,4 @@ steps:
     orchestratorConnection: 'Azure DevOps'
     folderName: 'UCare'
     traceLevel: 'Information'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Pack_Test_Pipeline'
-    publishLocation: 'Container'
-
+    attachRobotLogs: true
