@@ -8,8 +8,7 @@ trigger:
 
 pool:
   vmImage: windows-latest
-variables:
-  - group: DEV
+
 stages:
   - stage: Build
     displayName: Build Package
