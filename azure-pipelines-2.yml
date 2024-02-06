@@ -14,13 +14,13 @@ steps:
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'AH connection'
+    orchestratorConnection: 'Azure DevOps'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Information'
 - task: UiPathTest@4
   inputs:
     testTarget: 'TestProject'
-    orchestratorConnection: 'AH connection'
+    orchestratorConnection: 'Azure DevOps'
     folderName: 'UCare'
     traceLevel: 'Information'
 - task: PublishBuildArtifacts@1
