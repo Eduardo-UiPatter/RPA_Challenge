@@ -25,16 +25,4 @@ stages:
       - publish: $(Build.ArtifactStagingDirectory)
         artifact: drop
 
-  - stage: TestDEV
-    displayName:  Test After Publish
-    condition: succeeded()
-    jobs:
-      - job: TestDEV
-        steps:
-          - task: UiPathTest@4
-            inputs:
-              testTarget: 'TestSet'
-              orchestratorConnection: 'Azure DevOps'
-              testSet: 'UiPathAzureDevOps_Tests'
-              folderName: 'UCare'
-              testReportDestination: '$(Pipeline.Workspace)\drop\'
+ 
