@@ -24,5 +24,11 @@ stages:
           outputPath: '$(Build.ArtifactStagingDirectory)\output'
       - publish: $(Build.ArtifactStagingDirectory)
         artifact: drop
+      
+      - task: UiPathDeploy@4
+        inputs:
+          orchestratorConnection: 'Azure DevOps'
+          packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+          folderName: 'AH'
 
  
