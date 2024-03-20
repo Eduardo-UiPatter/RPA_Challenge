@@ -28,7 +28,7 @@ stages:
       - task: UiPathDeploy@4
         inputs:
           orchestratorConnection: 'Azure DevOps'
-          packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+          packagesPath: '$(Build.ArtifactStagingDirectory)\Output\'
           folderName: 'AH'
 
  
