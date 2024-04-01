@@ -24,11 +24,3 @@ stages:
           outputPath: '$(Build.ArtifactStagingDirectory)\output'
       - publish: $(Build.ArtifactStagingDirectory)
         artifact: drop
-      - task: UiPathDeploy@4
-        displayName: 'UiPath Deploy'
-        inputs:
-            orchestratorConnection: 'Azure DevOps'
-            packagesPath: '$(System.DefaultWorkingDirectory)/_Eduardo-UiPatter.RPA_Challenge (2)/drop/output'
-            folderName: AH
-            environments: 'UiPath_Dev'
-            traceLevel: Information
