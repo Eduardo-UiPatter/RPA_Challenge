@@ -17,7 +17,7 @@ stages:
       steps:
       - task: UiPathPack@4
         inputs:
-          versionType: '2.0'
+          versionType: '2.0.1'
           projectJsonPath: '$(Build.SourcesDirectory)'
           outputType: 'Process'
           orchestratorConnection: 'Azure DevOps'
